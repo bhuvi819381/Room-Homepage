@@ -1,8 +1,8 @@
 const About = () => {
   return (
-    <section className="flex flex-col md:flex-row">
+    <section className="flex flex-col md:flex-row md:h-[16.625rem]">
       <img src="/images/image-about-dark.jpg" alt="" />
-      <div className="flex flex-col justify-center p-10">
+      <div className="flex flex-col justify-center items-center p-8 md:p-12 md:w-[36.25rem]">
         <h2 className="mb-3 text-xl font-bold tracking-[.3em] uppercase">
           About our furniture
         </h2>

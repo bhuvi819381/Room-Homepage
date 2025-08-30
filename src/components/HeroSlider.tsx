@@ -45,9 +45,9 @@ const HeroSlider = () => {
     setCurrentSlide((prev) => (prev - 1 + data.length) % data.length);
   };
   return (
-    <section className="flex items-center justify-between border-blue-500 p-6 *:border md:flex-row md:p-0">
+    <section className="flex flex-col md:h-[33.375rem] md:flex-row md:p-0 border">
       {/* Image Slider part */}
-      <div className="relative h-[33.375rem] w-[52.5rem] border-green-500">
+      <div className="relative w-full md:w-[52.5rem] border-green-500">
         <img
           src={data[currentSlide].desktop}
           alt={data[currentSlide].title}
@@ -59,11 +59,11 @@ const HeroSlider = () => {
           className="w-full transition-all duration-500 ease-in-out md:hidden"
         />
         {/* Button Part */}
-        <div className="absolute -right-40 bottom-0 z-10 flex h-[5rem] w-[10rem]">
+        {/* <div className="absolute right-0 md:-right-40 bottom-0 z-10 flex h-[5rem] w-[10rem]">
           <button
             type="button"
             aria-label="previous slide"
-            className="hover:bg-Gray-500 bg-Black flex h-full w-1/2 items-center justify-center border-none transition-transform duration-150 outline-none active:scale-95"
+            className="hover:bg-Gray-500 bg-Black flex h-full w-full md:w-1/2 items-center justify-center border-none transition-transform duration-150 outline-none active:scale-95"
             onClick={prevSlide}
           >
             <img src="/images/icon-angle-left.svg" alt="" />
@@ -71,23 +71,23 @@ const HeroSlider = () => {
           <button
             type="button"
             aria-label="next slide"
-            className="hover:bg-Gray-500 flex h-full w-1/2 items-center justify-center border-none bg-black transition-transform duration-150 outline-none active:scale-95"
+            className="hover:bg-Gray-500 flex h-full w-full md:w-1/2 items-center justify-center border-none bg-black transition-transform duration-150 outline-none active:scale-95"
             onClick={nextSlide}
           >
             <img src="/images/icon-angle-right.svg" alt="" />
           </button>
-        </div>
+        </div> */}
       </div>
 
       {/* Text part */}
-      <div className="flex h-[33.375rem] w-[37.5rem] flex-col items-center justify-center gap-6 p-24">
+      <div className="flex md:h-[33.375rem] md:w-[37.5rem] flex-col items-start justify-center gap-6 p-8 md:p-24">
         <h1 className="text-[2.8rem] leading-none font-semibold">
           {data[currentSlide].title}
         </h1>
         <p className="text-Gray-500 text-[1.059rem] leading-6">
           {data[currentSlide].paragraph}
         </p>
-        <div className="flex cursor-pointer items-center justify-between gap-5 border">
+        <div className="flex cursor-pointer items-center justify-between gap-5">
           <button
             type="button"
             className="text-md cursor-pointer tracking-[.5em] uppercase"
