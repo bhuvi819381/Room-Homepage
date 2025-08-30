@@ -1,12 +1,5 @@
 import { useState } from "react";
-
-interface HeroSliderProps {
-  id: number;
-  desktop: string;
-  mobile: string;
-  title: string;
-  paragraph: string;
-}
+import type { HeroSliderProps } from "@/types/HeroSliderProps";
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -45,25 +38,25 @@ const HeroSlider = () => {
     setCurrentSlide((prev) => (prev - 1 + data.length) % data.length);
   };
   return (
-    <section className="flex flex-col md:h-[33.375rem] md:flex-row md:p-0 border">
+    <section className="flex flex-col border md:flex-row md:p-0">
       {/* Image Slider part */}
-      <div className="relative w-full md:w-[52.5rem] border-green-500">
+      <div className="relative md:w-[52.5rem]">
         <img
           src={data[currentSlide].desktop}
           alt={data[currentSlide].title}
-          className="hidden w-full transition-all duration-500 ease-in-out md:block"
+          className="hidden h-full w-full object-cover transition-all duration-500 ease-in-out md:block"
         />
         <img
           src={data[currentSlide].mobile}
           alt={data[currentSlide].title}
-          className="w-full transition-all duration-500 ease-in-out md:hidden"
+          className="aspect-auto h-full w-full object-contain transition-all duration-500 ease-in-out md:hidden"
         />
         {/* Button Part */}
-        {/* <div className="absolute right-0 md:-right-40 bottom-0 z-10 flex h-[5rem] w-[10rem]">
+        <div className="absolute right-0 bottom-0 z-10 flex h-[5rem] w-[10rem] md:-right-40 md:bottom-0">
           <button
             type="button"
             aria-label="previous slide"
-            className="hover:bg-Gray-500 bg-Black flex h-full w-full md:w-1/2 items-center justify-center border-none transition-transform duration-150 outline-none active:scale-95"
+            className="hover:bg-Gray-500 bg-Black flex h-full w-full items-center justify-center border-none transition-transform duration-150 outline-none active:scale-95 md:w-1/2"
             onClick={prevSlide}
           >
             <img src="/images/icon-angle-left.svg" alt="" />
@@ -71,16 +64,16 @@ const HeroSlider = () => {
           <button
             type="button"
             aria-label="next slide"
-            className="hover:bg-Gray-500 flex h-full w-full md:w-1/2 items-center justify-center border-none bg-black transition-transform duration-150 outline-none active:scale-95"
+            className="hover:bg-Gray-500 flex h-full w-full items-center justify-center border-none bg-black transition-transform duration-150 outline-none active:scale-95 md:w-1/2"
             onClick={nextSlide}
           >
             <img src="/images/icon-angle-right.svg" alt="" />
           </button>
-        </div> */}
+        </div>
       </div>
 
       {/* Text part */}
-      <div className="flex md:h-[33.375rem] md:w-[37.5rem] flex-col items-start justify-center gap-6 p-8 md:p-24">
+      <div className="justify-cente flex flex-col items-start gap-6 p-8 md:h-[33.375rem] md:w-[37.5rem] md:px-24">
         <h1 className="text-[2.8rem] leading-none font-semibold">
           {data[currentSlide].title}
         </h1>

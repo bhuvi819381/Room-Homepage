@@ -1,8 +1,8 @@
 const About = () => {
   return (
-    <section className="flex flex-col md:flex-row md:h-[16.625rem]">
-      <img src="/images/image-about-dark.jpg" alt="" />
-      <div className="flex flex-col justify-center items-center p-8 md:p-12 md:w-[36.25rem]">
+    <section className="flex flex-col md:flex-col lg:flex-row md:h-[16.625rem] h-full flex-wrap">
+      <img src="/images/image-about-dark.jpg" alt="" className=""/>
+      <div className="flex flex-col  justify-center items-center p-8 md:p-12 md:w-[36.25rem]">
         <h2 className="mb-3 text-xl font-bold tracking-[.3em] uppercase">
           About our furniture
         </h2>
@@ -15,7 +15,7 @@ const About = () => {
           dream space.
         </p>
       </div>
-      <img src="/images/image-about-light.jpg" alt="" />
+      <img src="/images/image-about-light.jpg" alt="" className=""/>
     </section>
   );
 };

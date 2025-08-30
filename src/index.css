@@ -1,17 +1,16 @@
 @import "tailwindcss";
 
-@theme{
+@theme {
   --color-White: hsl(0, 100%, 100%);
   --color-Black: hsl(0, 0%, 0%);
   --color-Gray-500: hsl(0, 0%, 63%);
   --color-Gray-800: hsl(0, 0%, 27%);
 }
 
+
 body {
   min-width: 375px;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
   font-family:
     "League Spartan",
     -apple-system,
